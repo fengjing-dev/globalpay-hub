@@ -1,75 +1,81 @@
 # GlobalPay Hub
 
-> Cross-border payment orchestration platform MVP  
-> 跨境支付聚合平台 MVP
+> Cross-border payment access and capability management platform MVP  
+> 跨境支付接入与支付能力管理平台 MVP
 
-GlobalPay Hub is a product-oriented payment orchestration project for cross-border merchants and payment operations teams.  
-GlobalPay Hub 是一个面向跨境商户与支付运营场景的产品型支付编排项目。
+GlobalPay Hub is a product-oriented backend project for cross-border merchant payment access, payment capability management, and transaction orchestration.  
+GlobalPay Hub 是一个面向跨境商户支付接入、支付能力管理与交易编排的产品型后端项目。
 
-It provides a unified layer for payment creation, channel routing, callback processing, refund handling, and basic operations management.  
-它提供统一的支付下单、渠道路由、回调处理、退款流转与基础运营管理能力。
+It provides merchant access, application management, payment method management, collection tools, payment sandbox flow, callback handling, refund processing, and basic operations management.  
+它提供商户接入、应用管理、支付方式管理、收款工具、支付调试、回调处理、退款流转与基础运营管理能力。
 
 ---
 
 ## Product Positioning | 产品定位
 
-GlobalPay Hub is designed as a lightweight payment orchestration platform that helps merchants integrate multiple payment channels through one unified backend.
+GlobalPay Hub is designed as a lightweight payment access platform that helps merchants manage payment capabilities through one unified backend.
 
 It is positioned as:
 
-- a cross-border payment orchestration MVP
-- a merchant-facing payment operations console
-- a backend architecture practice project with real business flavor
-- a product prototype that can evolve into a payment middle platform
+- a cross-border payment access and capability management MVP
+- a merchant-facing payment control console
+- a backend architecture practice project with real product semantics
+- a product prototype that can evolve into a payment platform foundation
 
-GlobalPay Hub 被设计为一个轻量级支付编排平台，帮助商户通过统一后台接入多个支付渠道。
+GlobalPay Hub 被设计为一个轻量级支付接入平台，帮助商户通过统一后台管理支付能力。
 
 它的定位是：
 
-- 跨境支付聚合与编排 MVP
-- 面向商户与运营的支付管理后台
-- 带真实业务味道的后端架构练手项目
-- 可继续演进为支付中台的产品原型
+- 跨境支付接入与支付能力管理 MVP
+- 面向商户的支付控制台
+- 带真实产品语义的后端架构练手项目
+- 可继续演进为支付平台基础能力的产品原型
 
 ---
 
 ## What Problem It Solves | 解决什么问题
 
-Merchants and platform teams often face these issues:
+Cross-border merchants often face these issues:
 
-- each payment channel has different APIs and callback formats
-- routing by country, currency, and payment method becomes hard-coded quickly
-- payment and refund callbacks are difficult to trace and process safely
-- operations teams need one place to inspect payment and refund records
+- payment channels are fragmented
+- application credentials and callback settings are hard to manage
+- payment methods are not presented through one unified capability layer
+- sandbox testing and live processing are mixed together
+- payment and refund callbacks are hard to trace
 
-GlobalPay Hub aims to solve these with one unified orchestration layer.
+GlobalPay Hub aims to solve these with one unified access and orchestration layer.
 
-商户和平台团队通常会遇到这些问题：
+跨境商户通常会遇到这些问题：
 
-- 不同支付渠道接口风格不同、回调格式不同
-- 国家、币种、支付方式的路由规则很容易写死在代码里
-- 支付与退款回调难以追踪，也难以安全处理
-- 运营和排障人员需要统一入口查看支付单与退款单
+- 支付渠道分散
+- 应用密钥和回调配置不好管理
+- 支付方式没有统一的能力层
+- 沙箱调试和正式交易混在一起
+- 支付与退款回调难以追踪
 
-GlobalPay Hub 的目标，就是用一层统一的支付编排能力把这些问题收口。
+GlobalPay Hub 的目标，就是用一层统一的接入与编排能力把这些问题收口。
 
 ---
 
 ## Core Capabilities | 核心能力
 
 - Merchant login and basic authentication
+- Application management
+- Payment method management
+- Collection toolkit: API Integration, Hosted Checkout, Payment Link
+- Payment sandbox / debug flow
 - Unified payment order creation and query
-- Multi-channel routing by rules
-- Mock payment channel integration for MVP validation
-- Callback verification and idempotent processing
+- Payment callback verification and idempotent processing
 - Refund request and refund callback handling
 - Basic admin console for payment, refund, and routing management
 
 - 商户登录与基础鉴权
+- 应用管理
+- 支付方式管理
+- 收款工具：API 接入、托管收银台、Payment Link
+- 支付调试与沙箱流程
 - 统一支付单创建与查询
-- 基于规则的多渠道路由
-- 用于第一阶段验证的 Mock 渠道接入
-- 回调验签与幂等处理
+- 支付回调验签与幂等处理
 - 退款申请与退款回调处理
 - 支付单、退款单、路由规则的基础后台管理
 
@@ -77,25 +83,25 @@ GlobalPay Hub 的目标，就是用一层统一的支付编排能力把这些问
 
 ## MVP Scope | 第一阶段范围
 
-The first stage focuses on the core transaction flow only:
+The first stage focuses on the access console and core transaction flow:
 
 1. Merchant login
-2. Create payment order
-3. Route to payment channel
-4. Mock channel order creation
-5. Payment callback handling
+2. Application management
+3. Payment method management
+4. Collection toolkit
+5. Payment sandbox / debug page
 6. Payment order query
 7. Refund request
 8. Refund callback handling
 9. Basic admin pages
 
-第一阶段只聚焦核心交易链路：
+第一阶段聚焦接入控制台与核心交易链路：
 
 1. 商户登录
-2. 创建支付单
-3. 渠道路由
-4. Mock 渠道下单
-5. 支付回调处理
+2. 应用管理
+3. 支付方式管理
+4. 收款工具
+5. 支付调试台
 6. 支付单查询
 7. 发起退款
 8. 退款回调处理
@@ -109,10 +115,13 @@ The current prototype includes:
 
 - Merchant login page
 - Merchant dashboard
-- Create payment page
+- Application management page
+- Payment method management page
+- Collection toolkit page
+- Payment sandbox / debug page
 - Payment list page
 - Payment detail page
-- Create refund page
+- Refund request page
 - Refund list page
 - Admin payment management page
 - Admin refund management page
@@ -122,10 +131,13 @@ The current prototype includes:
 
 - 商户登录页
 - 商户控制台
-- 发起支付页
+- 应用管理页
+- 支付方式管理页
+- 收款工具页
+- 支付调试台
 - 支付单列表页
 - 支付详情页
-- 发起退款页
+- 退款申请页
 - 退款列表页
 - 后台支付单管理页
 - 后台退款单管理页
@@ -200,20 +212,20 @@ Design docs, prototypes, and planning are maintained here:
 Recommended implementation order:
 
 1. Build backend project skeleton
-2. Design first-stage database tables
-3. Implement payment and refund main flows
-4. Implement `MockChannel`
-5. Verify the workflow with Swagger / Postman
-6. Add simple frontend pages for demonstration
+2. Freeze first-stage page scope
+3. Implement application management and payment method views
+4. Implement collection toolkit and sandbox flow
+5. Implement payment and refund main flows
+6. Verify the workflow with Swagger / Postman
 
 推荐开发顺序：
 
 1. 搭建后端项目骨架
-2. 设计第一阶段数据库表
-3. 实现支付与退款主链路
-4. 实现 `MockChannel`
-5. 使用 Swagger / Postman 验证主流程
-6. 最后补简单前端页面用于演示
+2. 冻结第一阶段页面范围
+3. 实现应用管理和支付方式管理
+4. 实现收款工具与支付调试台
+5. 实现支付与退款主链路
+6. 使用 Swagger / Postman 验证主流程
 
 ---
 
@@ -222,23 +234,23 @@ Recommended implementation order:
 The MVP can be considered complete when:
 
 - merchants can log in
-- payment orders can be created
-- routing rules can select a channel
-- the mock channel can simulate successful callbacks
-- repeated callbacks do not break order state
-- the refund flow is available
-- payment and refund records can be queried
+- application management is available
+- payment methods can be viewed
+- collection tools are available
+- the sandbox payment flow works
+- payment orders can be queried
+- refund flow is available
 - admin pages support basic troubleshooting
 
 当满足下面条件时，第一阶段 MVP 可视为完成：
 
 - 商户可以登录
-- 可以创建支付单
-- 可以根据路由规则选择渠道
-- Mock 渠道可以模拟成功回调
-- 重复回调不会破坏订单状态
+- 可以管理应用
+- 可以查看支付方式能力
+- 可以使用收款工具
+- 支付调试台可用
+- 支付单可查询
 - 退款主链路可用
-- 支付单与退款单可查询
 - 后台页面可支持基础排障
 
 ---
@@ -246,15 +258,15 @@ The MVP can be considered complete when:
 ## Future Evolution | 后续演进
 
 - real channel integration such as Stripe or PayPal
+- hosted checkout customization
+- merchant onboarding workflow
 - exchange rate management
 - reconciliation and compensation tasks
 - merchant notification retry
-- risk control extensions
-- operation audit logs
 
 - 接入真实渠道，例如 Stripe / PayPal
+- 托管收银台定制
+- 商户进件流程
 - 汇率管理
 - 对账与补偿任务
 - 商户通知重试
-- 风控扩展
-- 操作审计日志

@@ -2,20 +2,20 @@
 
 ## GitHub Description
 
-`Cross-border payment orchestration MVP with multi-channel routing, refund flow, callback idempotency, and admin console.`
+`Cross-border payment access and capability management platform MVP with payment sandbox, callback idempotency, and admin console.`
 
 ## One-line Value Proposition
 
-`A pragmatic payment backend project for practicing real-world transaction flow, channel abstraction, idempotent callbacks, and refund orchestration.`
+`A pragmatic payment backend project for practicing merchant onboarding, payment capability management, transaction orchestration, and refund handling.`
 
 ## Suggested Topics
 
 - `java`
 - `spring-boot`
 - `payment`
-- `cross-border-payment`
-- `payment-gateway`
 - `payment-orchestration`
+- `payment-gateway`
+- `cross-border-payment`
 - `refund`
 - `redis`
 - `mysql`
