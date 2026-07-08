@@ -131,9 +131,9 @@ The current prototype includes:
 - 后台退款单管理页
 - 后台渠道路由管理页
 
-Prototype location | 原型目录：
+Prototype and product docs | 原型与产品文档：
 
-- `D:\develop\project\demo\prototype\globalpay-hub`
+- [globalpay-hub-doc](https://github.com/fengjing-dev/globalpay-hub-doc)
 
 ---
 
@@ -146,7 +146,7 @@ Prototype location | 原型目录：
 - Monetary values are handled with `BigDecimal`
 
 - 支付渠道接入通过策略模式和工厂模式解耦
-- 支付状态与退款状态通过受控流转管理
+- 支付与退款状态通过显式流转控制
 - 回调处理从一开始就按幂等思路设计
 - 路由规则配置化，而不是硬编码
 - 金额字段统一使用 `BigDecimal`
@@ -185,19 +185,13 @@ controller -> service -> manager -> mapper
 
 ---
 
-## Docs And Planning | 文档与规划
+## Documentation | 文档仓库
 
-Planning and design documents are maintained here:
+Design docs, prototypes, and planning are maintained here:
 
-- `D:\develop\project\demo\docs\globalpay-hub`
+设计文档、页面原型与开发规划维护在这里：
 
-Recommended reading order:
-
-1. `01-项目背景与目标`
-2. `04-推荐架构与技术选型`
-3. `03-第一阶段开发任务清单`
-4. `06-MockChannel接口设计说明`
-5. `08-项目初始化与目录结构建议`
+- [globalpay-hub-doc](https://github.com/fengjing-dev/globalpay-hub-doc)
 
 ---
 
