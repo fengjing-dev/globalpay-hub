@@ -152,12 +152,14 @@ Prototype and product docs | 原型与产品文档：
 ## Architecture Highlights | 架构亮点
 
 - Channel integration is decoupled through strategy and factory patterns
+- Application access mode is modeled as a first-class domain
 - Payment and refund states are controlled by explicit transitions
 - Callback processing is designed with idempotency in mind
 - Routing rules are configuration-driven instead of hard-coded
 - Monetary values are handled with `BigDecimal`
 
 - 支付渠道接入通过策略模式和工厂模式解耦
+- 接入模式作为一级领域单独建模
 - 支付与退款状态通过显式流转控制
 - 回调处理从一开始就按幂等思路设计
 - 路由规则配置化，而不是硬编码
@@ -182,10 +184,12 @@ Prototype and product docs | 原型与产品文档：
 com.globalpay.hub
 ├─ auth
 ├─ merchant
+├─ application
 ├─ payment
 ├─ refund
 ├─ channel
 ├─ routing
+├─ audit
 └─ common
 ```
 
@@ -213,19 +217,21 @@ Recommended implementation order:
 
 1. Build backend project skeleton
 2. Freeze first-stage page scope
-3. Implement application management and payment method views
-4. Implement collection toolkit and sandbox flow
-5. Implement payment and refund main flows
-6. Verify the workflow with Swagger / Postman
+3. Implement merchant frontend and admin frontend as separate projects
+4. Implement application management and payment method views
+5. Implement collection toolkit and sandbox flow
+6. Implement payment and refund main flows
+7. Verify the workflow with Swagger / Postman
 
 推荐开发顺序：
 
 1. 搭建后端项目骨架
 2. 冻结第一阶段页面范围
-3. 实现应用管理和支付方式管理
-4. 实现收款工具与支付调试台
-5. 实现支付与退款主链路
-6. 使用 Swagger / Postman 验证主流程
+3. 分别搭建商户端和管理后台前端工程
+4. 实现应用管理和支付方式管理
+5. 实现收款工具与支付调试台
+6. 实现支付与退款主链路
+7. 使用 Swagger / Postman 验证主流程
 
 ---
 
